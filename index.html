@@ -7,17 +7,10 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
     <link rel="shortcut icon" href="//www.google.com/s2/favicons?sz=64&domain=scratch.mit.edu">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FD23CNKF3B"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-FD23CNKF3B');
-    </script>
+   
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 
@@ -43,7 +36,6 @@
                                     <br />
                                     感谢: Scratch Team, GitHub, Vue.js, Vuetify.js, Cnpmjs, FastGit 以及所有为这个项目添砖加瓦的人们!
                                     <br />
-                                    友情链接: <a href="https://scratch.cf/">Mirror Scratch</a>
                                 </p>
                             </div>
                         </v-col>
@@ -51,14 +43,7 @@
                             <v-card elevation="2">
                                 <v-card-title>下载 Scratch 3.0</v-card-title>
                                 <v-card-text>
-                                    未正确加载下载地址？请前往
-                                    <a href="https://hub.fastgit.xyz/waterblock79/asdm/releases/latest">FastGit 镜像</a>
-                                    或
-                                    <a href="https://github.com.cnpmjs.org/waterblock79/asdm/releases/latest">Cnpm
-                                        镜像站点</a>
-                                    下载。
-                                    <br />
-                                    同时，您也可以尝试 <a href="https://llk.github.io/scratch-gui/develop/">在线版本的 Scratch 3.0</a>
+                                    未正确加载下载地址？您可以尝试 <a href="https://llk.github.io/scratch-gui/develop/">在线版本的 Scratch 3.0</a>
                                     ，或在应用商店中下载 <a
                                         href="https://apps.apple.com/cn/app/scratch-desktop/id1446785996?mt=12">Mac OS
                                         版本</a> 和 <a
@@ -87,7 +72,7 @@
                                 <v-card-text>
                                     通常情况下您<b>不需要更改下载源</b>，但如果默认下载源不可用，您可以更改为另外一个，或者自定义下载源。
                                     <v-combobox v-model="download_source"
-                                        :items="['hub.fastgit.xyz','github.com']" label=""
+                                        :items="['gh-proxy.sunwuyuan.workers.dev/https://github.com','github.com']" label=""
                                         dense></v-combobox>
                                 </v-card-text>
                             </v-card>
@@ -100,9 +85,9 @@
     </v-app>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@2.x/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         new Vue({
             el: '#app',
@@ -117,7 +102,7 @@
                     date: '一周以内',
                     scratch_version: '未知'
                 },
-                download_source: 'hub.fastgit.xyz',
+                download_source: 'gh-proxy.sunwuyuan.workers.dev/https://github.com',
             },
             created: function () {
                 this.release.stat = 0
@@ -142,7 +127,7 @@
             methods: {
                 toggle_custom_source: function() {
                     this.toggle_button_text = this.toggle_button_text == "自定义下载源" ? "选择下载源" : "自定义下载源"
-                    if (this.toggle_button_text == "自定义下载源") { this.download_source = "hub.fastgit.xyz" }
+                    if (this.toggle_button_text == "自定义下载源") { this.download_source = "github.com" }
                 }
             }
         })
