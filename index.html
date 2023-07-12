@@ -106,7 +106,7 @@
             },
             created: function () {
                 this.release.stat = 0
-                axios.get('https://api.github.com/repos/sunwuyuan/asdm/releases/latest')
+                axios.get('https://api.github.com/repos/OurWorldOrg/AutoScratchDesktopMirror/releases/latest')
                     .then(res => {
                         this.release.stat = 1
                         this.release.url.windows = res.data.assets.
