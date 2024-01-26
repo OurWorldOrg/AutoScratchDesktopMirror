@@ -9,8 +9,8 @@
     <link rel="shortcut icon" href="//www.google.com/s2/favicons?sz=64&domain=scratch.mit.edu">
    
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    <link href="https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/@mdi/font@6.9.96/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://registry.npmmirror.com/vuetify@2.7.1/dist/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 
@@ -32,7 +32,7 @@
                                 它会每周自动从 Scratch 官方网站下载最新的 Scratch 3.0 安装包并上传至 (GitHub)
                                 Release 提供给用户以供下载。
                                 <p class="font-weight-light mt-2 text-caption">
-                                    项目开源于 <a href="https://github.com/sunwuyuan/asdm">GitHub</a>，本版本由 sunwuyuan 开发。
+                                    项目开源于 <a href="https://github.com/OurWorlddev/AutoScratchDesktopMirror">GitHub</a>，本版本由 sunwuyuan 开发。
                                     <br />
                                     感谢: Scratch Team, GitHub, Vue.js, Vuetify.js, Cnpmjs, FastGit 以及所有为这个项目添砖加瓦的人们!
                                     <br />
@@ -72,7 +72,7 @@
                                 <v-card-text>
                                     通常情况下您<b>不需要更改下载源</b>，但如果默认下载源不可用，您可以更改为另外一个，或者自定义下载源。
                                     <v-combobox v-model="download_source"
-                                        :items="['gh-proxy.sunwuyuan.workers.dev/https://github.com','github.com']" label=""
+                                        :items="['190823.xyz/https://github.com','github.com']" label=""
                                         dense></v-combobox>
                                 </v-card-text>
                             </v-card>
@@ -85,9 +85,9 @@
     </v-app>
     </div>
 
-    <script src="https://unpkg.com/vue@2.x/dist/vue.js"></script>
-    <script src="https://unpkg.com/vuetify@2.x/dist/vuetify.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://registry.npmmirror.com/vue@2.7.16/dist/vue.js"></script>
+    <script src="https://registry.npmmirror.com/vuetify@2.7.1/dist/vuetify.js"></script>
+    <script src="https://registry.npmmirror.com/axios/dist/axios.min.js"></script>
     <script>
         new Vue({
             el: '#app',
@@ -102,7 +102,7 @@
                     date: '一周以内',
                     scratch_version: '未知'
                 },
-                download_source: 'gh-proxy.sunwuyuan.workers.dev/https://github.com',
+                download_source: '190823.xyz/https://github.com',
             },
             created: function () {
                 this.release.stat = 0
