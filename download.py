@@ -3,16 +3,8 @@ import requests
 import os
 
 print('''
- _______  _______  ______   __   __ 
-|   _   ||       ||      | |  |_|  |
-|  |_|  ||  _____||  _    ||       |
-|       || |_____ | | |   ||       |
-|       ||_____  || |_|   ||       |
-|   _   | _____| ||       || ||_|| |
-|__| |__||_______||______| |_|   |_|
-     Auto Scratch-Desktop Mirror
-           DOWNLOAD START
-
+      OurWorld Auto Scratch-Desktop Mirror
+      by Sunwuyuan https://wuyuan.dev
 ''')
 
 # Create 'output'
