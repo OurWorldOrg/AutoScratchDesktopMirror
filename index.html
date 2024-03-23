@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-    <link rel="shortcut icon" href="//www.google.com/s2/favicons?sz=64&domain=scratch.mit.edu">
    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://registry.npmmirror.com/@mdi/font/6.9.96/files/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://registry.npmmirror.com/vuetify/2.7.1/files/dist/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
 </head>
 
 <body>
@@ -28,13 +27,11 @@
                     <v-row class="mx-5">
                         <v-col>
                             <div class="text-body-1">
-                                Auto Scratch-Desktop Mirror 是一个基于 GitHub Workflow 的开源镜像项目，
-                                它会每周自动从 Scratch 官方网站下载最新的 Scratch 3.0 安装包并上传至 (GitHub)
-                                Release 提供给用户以供下载。
+                                Auto Scratch-Desktop Mirror 是一个基于 GitHub Action 的开源镜像项目，它会每周自动从 Scratch 官方网站下载最新的 Scratch 3.0 安装包并上传至 GitHub Release 提供给用户以供下载。
                                 <p class="font-weight-light mt-2 text-caption">
-                                    项目开源于 <a href="https://github.com/OurWorlddev/AutoScratchDesktopMirror">GitHub</a>，本版本由 sunwuyuan 开发。
+                                    项目开源于 <a href="https://github.com/OurWorlddev/AutoScratchDesktopMirror">GitHub</a>，此站点由 <a href="https://wuyuan.dev">孙悟元</a>(<a href="https://wuyuan.dev">OurWorld社区</a>) 维护。
                                     <br />
-                                    感谢: Scratch Team, GitHub, Vue.js, Vuetify.js, Cnpmjs, FastGit 以及所有为这个项目添砖加瓦的人们!
+                                    感谢: Scratch Team, GitHub, Vue.js, Vuetify.js, Npmmirror 以及所有为这个项目添砖加瓦的人们!
                                     <br />
                                 </p>
                             </div>
@@ -43,12 +40,8 @@
                             <v-card elevation="2">
                                 <v-card-title>下载 Scratch 3.0</v-card-title>
                                 <v-card-text>
-                                    未正确加载下载地址？您可以尝试 <a href="https://llk.github.io/scratch-gui/develop/">在线版本的 Scratch 3.0</a>
-                                    ，或在应用商店中下载 <a
-                                        href="https://apps.apple.com/cn/app/scratch-desktop/id1446785996?mt=12">Mac OS
-                                        版本</a> 和 <a
-                                        href="https://www.microsoft.com/zh-cn/p/scratch-3/9pfgj25jl6x3">Windows 10
-                                        以上版本</a> 的 Scratch 桌面版。
+                                    未正确加载下载地址？您可以尝试在 <a href="https://ourworld.wuyuan.dev">OurWorld</a> 在线编程
+                                    ，或在应用商店中下载 <a href="https://apps.apple.com/cn/app/scratch-desktop/id1446785996?mt=12">Mac OS 版本</a> 和 <a href="https://www.microsoft.com/zh-cn/p/scratch-3/9pfgj25jl6x3">Windows 10 以上版本</a> 的 Scratch 桌面版。
                                     <br />
                                     <p class="mt-2 font-weight-bold">
                                         该版本镜像于 {{ release.date }}，Scratch 版本为 {{ release.scratch_version }}。
@@ -70,9 +63,10 @@
                             <v-card elevation="2" class="mt-7">
                                 <v-card-title>设置下载源</v-card-title>
                                 <v-card-text>
+                                    本站默认使用<b> 孙悟元(OurWorld) 镜像源</b><br/>
                                     通常情况下您<b>不需要更改下载源</b>，但如果默认下载源不可用，您可以更改为另外一个，或者自定义下载源。
                                     <v-combobox v-model="download_source"
-                                        :items="['190823.xyz/https://github.com','github.com']" label=""
+                                        :items="['gh.190823.xyz/https://github.com','github.com']" label=""
                                         dense></v-combobox>
                                 </v-card-text>
                             </v-card>
@@ -102,7 +96,7 @@
                     date: '一周以内',
                     scratch_version: '未知'
                 },
-                download_source: '190823.xyz/https://github.com',
+                download_source: 'gh.190823.xyz/https://github.com',
             },
             created: function () {
                 this.release.stat = 0
