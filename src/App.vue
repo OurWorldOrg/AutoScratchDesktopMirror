@@ -23,40 +23,47 @@
             </div>
           </v-col>
           <v-col>
-            <v-card elevation="2">
-              <v-card-title>下载 Scratch 3.0</v-card-title>
-              <v-card-text>
+            <v-card class="mx-auto" prepend-icon="mdi-download" subtitle="公益Scratch桌面版镜像">
+              <template v-slot:title>
+                <span class="font-weight-black">下载 Scratch 3.0</span>
+              </template>
+
+              <v-card-text class="bg-surface-light pt-4">
                 未正确加载下载地址？您可以尝试在 <a href="https://zerocat.wuyuan.dev">ZeroCat</a> 在线编程
                 ，或在应用商店中下载 <a href="https://apps.apple.com/cn/app/scratch-desktop/id1446785996?mt=12">Mac OS 版本</a> 和 <a
                   href="https://www.microsoft.com/zh-cn/p/scratch-3/9pfgj25jl6x3">Windows 10 以上版本</a> 的 Scratch 桌面版。
-                <br />
+
                 <p class="mt-2 font-weight-bold">
                   该版本镜像于 {{ release.date }}，Scratch 版本为 {{ release.scratch_version }}。
                 </p>
 
               </v-card-text>
               <v-card-actions>
-                <v-btn color="primary" v-bind:disabled="release.stat == 0"
-                  v-bind:href="`https://${download_source.abbr}${release.url.windows}`" text>
+                <v-btn v-bind:disabled="release.stat == 0"
+                  v-bind:href="`https://${download_source.abbr}${release.url.windows}`" variant="tonal">
                   <v-icon right>mdi-microsoft-windows</v-icon>
                   Windows 下载
                 </v-btn>
-                <v-btn color="primary" v-bind:disabled="release.stat == 0"
-                  v-bind:href="`https://${download_source.abbr}${release.url.macos}`" text>
+                <v-btn v-bind:disabled="release.stat == 0"
+                  v-bind:href="`https://${download_source.abbr}${release.url.macos}`" variant="tonal">
                   <v-icon right>mdi-apple</v-icon>
                   MacOS 下载
                 </v-btn></v-card-actions>
             </v-card>
-            <v-card elevation="2" class="mt-7">
-              <v-card-title>设置下载源</v-card-title>
+            <v-card elevation="2" class="mt-7" subtitle="如无法下载请检查此处" prepend-icon="mdi-server">
+              <template v-slot:title>
+                <span class="font-weight-black">设置下载源</span>
+              </template>
               <v-card-text>
                 本站默认使用<b> ghproxy 镜像源</b><br />
                 通常情况下您<b>不需要更改下载源</b>，但如果默认下载源不可用，您可以更改为另外一个，或者自定义下载源。
                 <br /> <br />
                 <v-select v-model="download_source" :hint="`${download_source.state}, ${download_source.abbr}`"
                   :items="download_source_items" item-title="state" item-value="abbr" label="Select" persistent-hint
-                  return-object single-line></v-select><br /><v-text-field label="可直接编辑"
-                  v-model="download_source.abbr"></v-text-field>
+                  return-object single-line></v-select>
+                <br />
+                <v-text-field label="可直接编辑" v-model="download_source.abbr">
+                </v-text-field>
               </v-card-text>
             </v-card>
           </v-col>

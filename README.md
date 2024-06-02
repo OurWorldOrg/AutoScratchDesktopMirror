@@ -6,4 +6,4 @@ Auto Scratch-Desktop Mirror 是一个基于 GitHub Action 的开源镜像项目�
 此站点由 孙悟元(OurWorld) 维护。https://asdm.wuyuan.dev
 
 
-感谢: Scratch Team, GitHub, Vue.js, Vuetify.js, Npmmirror 以及所有为这个项目添砖加瓦的人们!
+感谢: Scratch Team, GitHub, Vue.js, Vuetify.js 以及所有为这个项目添砖加瓦的人们!
