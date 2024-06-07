@@ -10,17 +10,47 @@
       <v-container class="d-flex mt-5">
         <v-row class="mx-5">
           <v-col>
-            <div class="text-body-1">
-              Auto Scratch-Desktop Mirror 是一个基于 GitHub Action 的开源镜像项目，它会每周自动从 Scratch 官方网站下载最新的 Scratch 3.0 安装包并上传至
+            <v-card> <v-card-item> <v-card-title>Auto Scratch-Desktop Mirror</v-card-title>
+                    <v-card-subtitle>Scratch桌面版镜像</v-card-subtitle></v-card-item>
+                  <v-card-text class="bg-surface-light pt-4">
+
+                    Auto Scratch-Desktop Mirror 是一个基于 GitHub Action 的开源镜像项目，它会每周自动从 Scratch 官方网站下载最新的 Scratch 3.0 安装包并上传至
               GitHub Release 提供给用户以供下载。
-              <p class="font-weight-light mt-2 text-caption">
-                项目开源于 <a href="https://github.com/sunwuyuan/AutoScratchDesktopMirror">GitHub</a>，此站点由 <a
-                  href="https://wuyuan.dev">孙悟元</a>(<a href="https://zerocat.wuyuan.dev">ZeroCat社区</a>) 维护。
-                <br />
-                感谢: Scratch Team, GitHub, Vue.js, Vuetify.js 以及所有为这个项目添砖加瓦的人们!
-                <br />
-              </p>
-            </div>
+                  </v-card-text>
+                  </v-card>
+
+           
+                <v-card class="mt-7"> <v-card-item> <v-card-title>感谢ASDM的开发者们</v-card-title>
+                    <v-card-subtitle>这是 scratch-bar 开源于Github的项目asdm，以下附原始声明</v-card-subtitle></v-card-item>
+                  <v-card-text class="bg-surface-light pt-4">
+
+                    Auto Scratch Desktop Mirror 是一个 Scratch
+                    桌面版的开源下载镜像项目。我们通过 Github Workflow
+                    自动下载 Scratch 官网的 Scratch 桌面版程序，并透过
+                    CDN 或 Github Pages
+                    提供，以方便中国大陆地区的用户下载。
+                    <p class="font-weight-light mt-2 text-caption">
+                      项目开源于
+                      <a href="https://github.com/scratch-bar/asdm">GitHub</a>，本版本由 waterblock79 开发。
+                      <br />
+                      感谢: Scratch Team, GitHub, Vue.js, Vuetify.js
+                      以及所有为这个项目添砖加瓦的人们!
+                    </p>
+
+                  </v-card-text>
+                  <v-card-text>此版本开源于 <a
+                      href="https://github.com/sunwuyuan/AutoScratchDesktopMirror">GitHub</a>
+                      <br/>
+                      任何问题欢迎加QQ群沟通 964979747<br/>
+
+                      <p class="font-weight-light mt-2 text-caption">
+                      此站点目前由 <a href="https://wuyuan.dev">孙悟元</a>(<a href="https://zerocat.wuyuan.dev">ZeroCat社区</a>) 维护。<br/>
+
+                      感谢: Scratch Team, GitHub, Vue.js, Vuetify.js, scratch-bar, waterblock79 , wrj2009 以及所有为这个项目添砖加瓦的人们!</p>
+                  </v-card-text></v-card>
+
+
+                
           </v-col>
           <v-col>
             <v-card class="mx-auto" prepend-icon="mdi-download" subtitle="公益Scratch桌面版镜像">
@@ -29,8 +59,7 @@
               </template>
 
               <v-card-text class="bg-surface-light pt-4">
-                未正确加载下载地址？您可以尝试在 <a href="https://zerocat.wuyuan.dev">ZeroCat</a> 在线编程
-                ，或在应用商店中下载 <a href="https://apps.apple.com/cn/app/scratch-desktop/id1446785996?mt=12">Mac OS 版本</a> 和 <a
+                未正确加载下载地址？您可以尝试在应用商店中下载 <a href="https://apps.apple.com/cn/app/scratch-desktop/id1446785996?mt=12">Mac OS 版本</a> 和 <a
                   href="https://www.microsoft.com/zh-cn/p/scratch-3/9pfgj25jl6x3">Windows 10 以上版本</a> 的 Scratch 桌面版。
 
                 <p class="mt-2 font-weight-bold">
@@ -55,7 +84,7 @@
                 <span class="font-weight-black">设置下载源</span>
               </template>
               <v-card-text>
-                本站默认使用<b> ghproxy 镜像源</b><br />
+                默认使用<b> ghproxy 镜像源</b><br />
                 通常情况下您<b>不需要更改下载源</b>，但如果默认下载源不可用，您可以更改为另外一个，或者自定义下载源。
                 <br /> <br />
                 <v-select v-model="download_source" :hint="`${download_source.state}, ${download_source.abbr}`"

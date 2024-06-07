@@ -6,7 +6,7 @@
     </a>
 
     <div class="text-caption text-disabled" style="position: absolute; right: 16px;">
-      &copy; 2020-{{ (new Date()).getFullYear() }} <a class="text-decoration-none on-surface" href="https://wuyuan.dev/"
+      {{ (new Date()) }} <a class="text-decoration-none on-surface" href="https://wuyuan.dev/"
         rel="noopener noreferrer" target="_blank">孙悟元</a>
       —
       <a class="text-decoration-none on-surface" href="https://zerocat.wuyuan.dev/" rel="noopener noreferrer"
