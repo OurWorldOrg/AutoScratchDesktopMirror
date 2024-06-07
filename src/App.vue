@@ -21,7 +21,7 @@
 
            
                 <v-card class="mt-7"> <v-card-item> <v-card-title>感谢ASDM的开发者们</v-card-title>
-                    <v-card-subtitle>这是 scratch-bar 开源于Github的项目asdm，以下附原始声明</v-card-subtitle></v-card-item>
+                    <v-card-subtitle>这是 scratch-bar 开源于Github的项目 asdm 的原始声明</v-card-subtitle></v-card-item>
                   <v-card-text class="bg-surface-light pt-4">
 
                     Auto Scratch Desktop Mirror 是一个 Scratch
