@@ -58,7 +58,7 @@
 
           </v-col>
           <v-col>
-            <v-card class="mx-auto" hover>
+            <v-card class="mx-auto" hover :loading="loading">
               <v-card-item>
                 <template v-slot:prepend>
                   <v-icon icon="$download"></v-icon>
@@ -148,12 +148,13 @@ export default {
         { state: '自定义', abbr: '' },
 
       ],
-
+      loading: false
     };
 
   },
 
   created() {
+    this.loading=true
     this.release.stat = 0
     axios.get('https://zerocat-static.wuyuan.dev/repos/sunwuyuan/AutoScratchDesktopMirror/releases/latest')
       .then(res => {
@@ -168,10 +169,13 @@ export default {
           .replace('https://github.com', '')
         this.release.date = new Date(res.data.published_at).toLocaleString()
         this.release.scratch_version = JSON.parse(res.data.body).scratch_version
+        this.loading=false
       })
       .catch(err => {
         this.release.stat = err.response.status
+        this.loading=false
       })
+      
   },
 };
 
