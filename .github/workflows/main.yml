@@ -42,4 +42,4 @@ jobs:
         path: |
           output/scratch-win.exe
           output/scratch-mac.dmg
-        tag: ${{ github.run_id }}
+        tag: ${{ env.scratch_version }}
