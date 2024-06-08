@@ -2,7 +2,7 @@
   <v-footer height="40" app>
     <a v-for="item in items" :key="item.title" :href="item.href" :title="item.title"
       class="d-inline-block mx-2 social-link" rel="noopener noreferrer" target="_blank">
-      <v-icon :icon="item.icon" :size="item.icon === '$vuetify' ? 24 : 16" />
+      <v-icon :icon="item.icon" :size="item.icon === '$web' ? 24 : 16" />
     </a>
 
     <div class="text-caption text-disabled" style="position: absolute; right: 16px;">
@@ -19,16 +19,17 @@
 
 <script setup>
 const items = [
-  {
-    title: 'Github',
-    icon: `mdi-github`,
-    href: 'https://github.com/zerocatdev/zerocat',
+{
+    title: 'ZeroCat社区',
+    icon: '$web',
+    href: 'https://zerocat.wuyuan.dev/',
   },
   {
-    title: 'ZeroCat社区',
-    icon: 'mdi-earth',
-    href: 'https://zerocat.wuyuan.dev/',
+    title: 'Github',
+    icon: `$github`,
+    href: 'https://github.com/zerocatdev/zerocat',
   }
+  
 ]
 </script>
 

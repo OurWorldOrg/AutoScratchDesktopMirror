@@ -3,15 +3,15 @@
     <v-main>
       <v-toolbar elevation="4">
         <v-app-bar-nav-icon>
-          <v-icon>mdi-download-box-outline</v-icon>
+          <v-icon icon="$downloadbox"></v-icon>
         </v-app-bar-nav-icon>
         <v-toolbar-title>Scratch 桌面版下载镜像</v-toolbar-title>
       </v-toolbar>
       <v-container class="d-flex mt-5">
         <v-row class="mx-5">
           <v-col>
-            <v-card hover> <v-card-item>   <template v-slot:prepend>
-                  <v-icon icon="mdi-download-box-outline"></v-icon>
+            <v-card hover> <v-card-item> <template v-slot:prepend>
+                  <v-icon icon="$downloadbox"></v-icon>
                 </template> <v-card-title>Auto Scratch-Desktop Mirror</v-card-title>
                 <v-card-subtitle>Scratch桌面版镜像</v-card-subtitle></v-card-item>
               <v-card-text class="bg-surface-light pt-4">
@@ -22,8 +22,8 @@
             </v-card>
 
 
-            <v-card class="mt-7" hover> <v-card-item>  <template v-slot:prepend>
-                  <v-icon icon="mdi-heart"></v-icon>
+            <v-card class="mt-7" hover> <v-card-item> <template v-slot:prepend>
+                  <v-icon icon="$heart"></v-icon>
                 </template><v-card-title>感谢ASDM的开发者们</v-card-title>
                 <v-card-subtitle>以下附 ASDM 的原始声明</v-card-subtitle></v-card-item>
               <v-card-text class="bg-surface-light pt-4">
@@ -59,18 +59,21 @@
           </v-col>
           <v-col>
             <v-card class="mx-auto" hover>
-              <v-card-item> 
+              <v-card-item>
                 <template v-slot:prepend>
-                  <v-icon icon="mdi-download"></v-icon>
-                </template> 
+                  <v-icon icon="$download"></v-icon>
+                </template>
                 <v-card-title class="font-weight-black">下载 Scratch 3.0</v-card-title>
                 <v-card-subtitle>公益Scratch桌面版镜像</v-card-subtitle>
               </v-card-item>
 
 
               <v-card-text class="bg-surface-light pt-4">
-                未正确加载下载地址？您可以尝试在应用商店中下载 <a href="https://apps.apple.com/cn/app/scratch-desktop/id1446785996?mt=12" class="on-surface">Mac
-                  OS 版本</a> 和 <a href="https://www.microsoft.com/zh-cn/p/scratch-3/9pfgj25jl6x3" class="on-surface">Windows 10 以上版本</a> 的
+                未正确加载下载地址？您可以尝试在应用商店中下载 <a href="https://apps.apple.com/cn/app/scratch-desktop/id1446785996?mt=12"
+                  class="on-surface">Mac
+                  OS 版本</a> 和 <a href="https://www.microsoft.com/zh-cn/p/scratch-3/9pfgj25jl6x3"
+                  class="on-surface">Windows 10
+                  以上版本</a> 的
                 Scratch 桌面版。
 
                 <p class="mt-2 font-weight-bold">
@@ -81,24 +84,24 @@
               <v-card-actions>
                 <v-btn v-bind:disabled="release.stat == 0"
                   v-bind:href="`https://${download_source.abbr}${release.url.windows}`" variant="tonal">
-                  <v-icon right>mdi-microsoft-windows</v-icon>
+                  <v-icon right icon="$windows"></v-icon>
                   Windows 下载
                 </v-btn>
                 <v-btn v-bind:disabled="release.stat == 0"
                   v-bind:href="`https://${download_source.abbr}${release.url.macos}`" variant="tonal">
-                  <v-icon right>mdi-apple</v-icon>
+                  <v-icon right icon="$macos"></v-icon>
                   MacOS 下载
                 </v-btn></v-card-actions>
             </v-card>
-            <v-card elevation="2" class="mt-7"  hover>
-              <v-card-item> 
+            <v-card  class="mt-7" hover>
+              <v-card-item>
                 <template v-slot:prepend>
-                  <v-icon icon="mdi-server"></v-icon>
-                </template> 
+                  <v-icon icon="$server"></v-icon>
+                </template>
                 <v-card-title class="font-weight-black">设置下载源</v-card-title>
                 <v-card-subtitle>如无法下载请检查此处</v-card-subtitle>
               </v-card-item>
-             
+
               <v-card-text>
                 默认使用 <b><a href="https://mirror.ghproxy.com/" class="on-surface">ghproxy</a></b> 镜像源<br />
                 通常情况下您<b>不需要更改下载源</b>，但如果默认下载源不可用，您可以更改为另外一个，或者自定义下载源。
@@ -156,11 +159,11 @@ export default {
       .then(res => {
         this.release.stat = 1
         this.release.url.windows = res.data.assets.
-          filter((element) => { return (element['name'] =="scratch-win.exe") })[0]
+          filter((element) => { return (element['name'] == "scratch-win.exe") })[0]
           .browser_download_url
           .replace('https://github.com', '')
         this.release.url.macos = res.data.assets.
-          filter((element) => { return (element['name'] =="scratch-mac.dmg") })[0]
+          filter((element) => { return (element['name'] == "scratch-mac.dmg") })[0]
           .browser_download_url
           .replace('https://github.com', '')
         this.release.date = new Date(res.data.published_at).toLocaleString()
