@@ -156,7 +156,7 @@ export default {
   created() {
     this.loading=true
     this.release.stat = 0
-    axios.get('https://zerocat-static.wuyuan.dev/repos/sunwuyuan/AutoScratchDesktopMirror/releases/latest')
+    axios.get('https://zerocat-static.houlangs.com/repos/sunwuyuan/AutoScratchDesktopMirror/releases/latest')
       .then(res => {
         this.release.stat = 1
         this.release.url.windows = res.data.assets.
