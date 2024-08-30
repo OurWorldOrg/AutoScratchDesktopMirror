@@ -3,7 +3,7 @@
 Auto Scratch Desktop Mirror 是一个 Scratch 桌面版的开源下载镜像项目。我们通过 Github Workflow 自动下载 Scratch 官网的 Scratch 桌面版程序，并发布为 GitHub Release ，以方便中国大陆地区的用户下载。同时，也可以在 GitHub Release 中寻找历史版本。
 
 
-此站点目前由 [孙悟源](https://wuyuan.dev/) , [ZeroCat 社区](https://zerocat.wuyuan.dev/) , [厚浪云](https://www.langs.ink/) 维护。
+此站点目前由 [孙悟元](https://wuyuan.dev/) , [ZeroCat 社区](https://zerocat.wuyuan.dev/) , [厚浪云](https://www.langs.ink/) 维护。
 
 任何问题欢迎 [QQ群964979747](https://qm.qq.com/q/paXELdMIIU) 沟通 
 
