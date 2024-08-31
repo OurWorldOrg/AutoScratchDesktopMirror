@@ -43,7 +43,7 @@ print('Download scratch-desktop for macOS done.')
 
 r = requests.get('https://downloads.scratch.mit.edu/link/mac.zip', stream=True)
 
-with open(r'./output/scratch-link-mac.dmg', "wb") as f:
+with open(r'./output/scratch-link-mac.zip', "wb") as f:
     for chunk in r.iter_content(chunk_size=512):
         f.write(chunk)
 
