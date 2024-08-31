@@ -4,8 +4,8 @@ import os
 import re
 
 print('''
-      OurWorld Auto Scratch-Desktop Mirror
-      by Sunwuyuan https://wuyuan.dev
+      ZeroCat Auto Scratch-Desktop Mirror
+      This version by Sunwuyuan https://wuyuan.dev
 ''')
 
 # Create 'output'
