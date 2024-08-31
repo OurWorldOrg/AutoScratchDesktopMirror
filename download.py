@@ -55,7 +55,7 @@ try:
     getVersion = requests.get('https://downloads.scratch.mit.edu/desktop/Scratch%20Setup.exe', allow_redirects=False)
     scratch_version = getVersion.headers['location'].split('%20')[1]
     getVersion = requests.get('https://downloads.scratch.mit.edu/link/windows.zip', allow_redirects=False)
-    scratch_link_version = getVersion.headers['location'].re.search(r"-(\d+\.\d+\.\d+)", url).group(1)
+    scratch_link_version = re.search(r"-(\d+\.\d+\.\d+)", getVersion.headers['location']).group(1)
     os.system('echo "scratch_version='+scratch_version+'-'+scratch_link_version+'" >> $GITHUB_ENV')
 except:
     print('Get version Error!')
